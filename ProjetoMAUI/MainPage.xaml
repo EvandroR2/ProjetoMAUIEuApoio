@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:ProjetoMAUI.Models"
+             x:Class="ProjetoMAUI.MainPage"
+             Shell.NavBarIsVisible="False" BackgroundColor="#F3F6FA">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#172D45" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#176B65" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="14" />
+            <Setter Property="Padding" Value="20,14" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="24,32" Spacing="22" MaximumWidthRequest="760" HorizontalOptions="Fill">
+            <Label Text="MEUS APOIOS  /  RJ" FontSize="12" FontAttributes="Bold" CharacterSpacing="2" TextColor="#176B65" />
+            <Label Text="Uma escolha.&#10;Um Rio melhor." FontSize="36" FontAttributes="Bold" SemanticProperties.HeadingLevel="Level1" />
+            <Label Text="Conheça os candidatos que apoio para representar o Rio de Janeiro e o Brasil." FontSize="16" TextColor="#526579" />
+            <Border BackgroundColor="#172D45" StrokeThickness="0" Padding="20" StrokeShape="RoundRectangle 18">
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="RIO DE JANEIRO" TextColor="#9AD8CD" FontSize="11" CharacterSpacing="1.5" />
+                        <Label Text="Nossos representantes" TextColor="White" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="Presidência e duas vagas no Senado" TextColor="#D3DFEB" FontSize="13" />
+                    </VerticalStackLayout>
+                    <Label Grid.Column="1" Text="RJ" FontSize="32" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+                </Grid>
+            </Border>
+            <Label Text="Quem eu apoio" FontSize="22" FontAttributes="Bold" SemanticProperties.HeadingLevel="Level2" />
+            <VerticalStackLayout x:Name="CandidateCards" Spacing="12">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:Candidate">
+                        <Border Stroke="#DEE5EE" BackgroundColor="White" Padding="18" StrokeShape="RoundRectangle 18">
+                            <Grid ColumnDefinitions="56,*,Auto" ColumnSpacing="14">
+                                <Border BackgroundColor="#E8F3F0" StrokeThickness="0" WidthRequest="56" HeightRequest="64" StrokeShape="RoundRectangle 12">
+                                    <Label Text="{Binding Initials}" FontSize="22" FontAttributes="Bold" TextColor="#176B65" HorizontalOptions="Center" VerticalOptions="Center" />
+                                </Border>
+                                <VerticalStackLayout Grid.Column="1" Spacing="4" VerticalOptions="Center">
+                                    <Label Text="{Binding Office}" TextColor="#176B65" FontSize="12" FontAttributes="Bold" />
+                                    <Label Text="{Binding DisplayName}" FontSize="19" FontAttributes="Bold" />
+                                    <Label Text="{Binding DisplayParty}" FontSize="12" TextColor="#526579" />
+                                </VerticalStackLayout>
+                                <Label Grid.Column="2" Text="{Binding DisplayNumber}" FontSize="22" FontAttributes="Bold" VerticalOptions="Center" SemanticProperties.Description="Número do candidato" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="3">
+                    <Label Text="Também mostrar deputados" FontAttributes="Bold" FontSize="15" />
+                    <Label Text="Federal e estadual" TextColor="#526579" FontSize="12" />
+                </VerticalStackLayout>
+                <Switch x:Name="DeputiesSwitch" Grid.Column="1" OnColor="#176B65" Toggled="OnDeputiesToggled" SemanticProperties.Description="Mostrar deputados federal e estadual" />
+            </Grid>
+            <Button x:Name="CopyButton" Text="Copiar minha colinha" Clicked="OnCopyClicked" />
+            <Label x:Name="StatusLabel" Text="Os apoios serão exibidos aqui assim que forem definidos." FontSize="12" TextColor="#526579" HorizontalTextAlignment="Center" />
+            <Label Text="Lista pessoal de apoios · Rio de Janeiro" FontSize="11" TextColor="#526579" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

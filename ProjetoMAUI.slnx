@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/AppTeste01/">
+    <Project Path="ProjetoMAUI/ProjetoMAUI.csproj">
+      <Deploy Solution="Debug|*" />
+    </Project>
+  </Folder>
+</Solution>

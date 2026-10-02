@@ -1,0 +1,7 @@
+[
+  { "Office": "Presidente", "Name": "Flávio Bolsonaro", "Party": "PL", "Number": "22" },
+  { "Office": "Senador · vaga 1", "Name": "Carlos Portinho", "Party": "PL", "Number": "222" },
+  { "Office": "Senador · vaga 2", "Name": "Carlos Jordy", "Party": "PL", "Number": "221" },
+  { "Office": "Deputado federal", "Name": "Ed Raposo", "Party": "PL", "Number": "2207", "Optional": true },
+  { "Office": "Deputado estadual", "Name": "Alan Lopes", "Party": "PL", "Number": "22377", "Optional": true }
+]
