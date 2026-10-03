@@ -1,8 +1,8 @@
-# Meus Apoios RJ
+# AppEvandroEuApoio
 
 Primeira versão nativa em .NET MAUI inspirada na organização do site do arquivo peterapoia-main.zip.
 
-A tela mostra presidente, senador (vaga 1) e senador (vaga 2), com Rio de Janeiro fixo. Um interruptor permite exibir deputado federal e estadual. O botão copia um resumo em texto quando houver pelo menos um nome definido. Funciona sem conexão: não usa serviços externos.
+A tela mostra presidente, governador, senador (vaga 1) e senador (vaga 2), com Rio de Janeiro fixo. Um interruptor permite exibir deputado federal e estadual. O botão copia um resumo em texto quando houver pelo menos um nome definido. Funciona sem conexão: não usa serviços externos.
 
 ## Definir os apoios
 
@@ -12,7 +12,15 @@ Por solicitação do usuário, os nomes, partidos e números de presidente e dos
 
 ## Executar
 
-Abra a solução no Visual Studio com a carga de trabalho .NET MAUI, selecione Windows ou um dispositivo Android e execute. O projeto também mantém os destinos iOS e Mac Catalyst do modelo original, que exigem o ambiente correspondente.
+Abra a solução no Visual Studio com a carga de trabalho .NET MAUI, selecione seu celular Android ou emulador e execute. O projeto compila exclusivamente para Android. As pastas de outras plataformas foram preservadas como referência para uma futura versão iOS; elas não são compiladas nem incluídas no aplicativo Android.
 
-Verificação Windows: `dotnet build ProjetoMAUI/ProjetoMAUI.csproj -f net10.0-windows10.0.19041.0`.
+Verificação Android: `dotnet build ProjetoMAUI/ProjetoMAUI.csproj`.
+
+Arquiteturas mantidas: `android-arm` (seu Xiaomi de 32 bits), `android-arm64` (outros celulares) e `android-x64` (emulador). A imagem de exemplo `dotnet_bot.png` e o texto `AboutAssets.txt` não entram no pacote. Remover destinos de outras plataformas simplifica a compilação, mas não remove bibliotecas do APK Android, que já era específico dessa plataforma. Para distribuição, use Release, que aplica a redução de código não utilizado padrão do MAUI.
+
+
+
+## Identidade do aplicativo
+
+Nome exibido: AppEvandroEuApoio. Identificador Android: br.com.evandroedgariano.appevandroeuapoio, baseado no domínio evandroedgariano.com.br. Esse identificador deve ser mantido nas atualizações após a publicação. Os candidatos foram conferidos e editados pelo usuário, incluindo governador.
 

@@ -51,7 +51,7 @@ public partial class MainPage : ContentPage
             (string.IsNullOrWhiteSpace(candidate.Party) ? "" : $" · {candidate.Party}"));
         try
         {
-            await Clipboard.Default.SetTextAsync("Meus apoios · Rio de Janeiro\n\n" + string.Join("\n", lines));
+            await Clipboard.Default.SetTextAsync("AppEvandroEuApoio · Rio de Janeiro\n\n" + string.Join("\n", lines));
             StatusLabel.Text = "Colinha copiada!";
             SemanticScreenReader.Default.Announce(StatusLabel.Text);
         }
